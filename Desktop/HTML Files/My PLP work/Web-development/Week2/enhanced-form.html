@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enhanced HTML5 content and forms demonstration">
+    <title>Enhanced HTML5 Content & Forms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+        
+        main {
+            background: white;
+            padding: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        h1, h2, h3 {
+            color: #333;
+        }
+        
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Lists Styling */
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        li {
+            margin: 0.5rem 0;
+        }
+        
+        ul ul, ol ol {
+            margin: 0.25rem 0;
+        }
+        
+        /* Tables Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: blue;
+        }
+        
+        caption {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        thead th {
+            background-color: #343a40;
+            color: white;
+        }
+        
+        tfoot th {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tbody tr:hover {
+            background-color: #e3f2fd;
+        }
+        
+        article {
+            margin-bottom: 2rem;
+        }
+        
+        /* Media Styling */
+        figure {
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+        
+        figcaption {
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .image-gallery figure {
+            flex: 0 1 150px;
+            margin: 0;
+        }
+        
+        audio, video {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        
+        video {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        details {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 0.5rem;
+            margin: -1rem -1rem 1rem -1rem;
+            background: #e9ecef;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        summary:hover {
+            background: #dee2e6;
+        }
+        
+        dl {
+            margin: 0;
+        }
+        
+        dt {
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+        
+        dd {
+            margin: 0.25rem 0 0.5rem 1rem;
+        }
+        
+        /* Form Styling */
+        form {
+            max-width: none;
+        }
+        
+        fieldset {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background: #fdfdfd;
+        }
+        
+        legend {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #495057;
+            padding: 0 1rem;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="password"],
+        input[type="date"],
+        input[type="number"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+        
+        input:valid {
+            border-color: #28a745;
+        }
+        
+        input:invalid:not(:focus):not(:placeholder-shown) {
+            border-color: #dc3545;
+        }
+        
+        .help-text {
+            display: block;
+            margin-top: 0.25rem;
+            color: #6c757d;
+            font-size: 0.875rem;
+        }
+        
+        /* Checkbox and Radio Styling */
+        .checkbox-group,
+        .radio-group {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .checkbox-group legend,
+        .radio-group legend {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            padding: 0;
+            border: none;
+            background: none;
+        }
+        
+        .checkbox-item,
+        .radio-item {
+            display: flex;
+            align-items: center;
+            margin: 0.75rem 0;
+        }
+        
+        .checkbox-item input,
+        .radio-item input {
+            width: auto;
+            margin-right: 0.75rem;
+            transform: scale(1.2);
+        }
+        
+        .checkbox-item label,
+        .radio-item label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: normal;
+        }
+        
+        /* Range Input Styling */
+        input[type="range"] {
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+        
+        output {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        
+        /* Button Styling */
+        .form-actions {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            margin: 0.5rem;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: #4a90e2;
+            color: white;
+            border-color: #4a90e2;
+        }
+        
+        .btn-primary:hover {
+            background-color: #357abd;
+            border-color: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(74, 144, 226, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border-color: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #545b62;
+            border-color: #545b62;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            main {
+                padding: 1rem;
+            }
+            
+            section {
+                padding: 1rem;
+            }
+            
+            fieldset {
+                padding: 1rem;
+            }
+            
+            .image-gallery {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            table {
+                font-size: 0.875rem;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+        
+        /* Accessibility Enhancements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+        
+        @media (prefers-contrast: high) {
+            input:focus,
+            select:focus,
+            textarea:focus {
+                border-color: #000;
+                box-shadow: 0 0 0 3px #000;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            section {
+                border: 1px solid #000;
+                break-inside: avoid;
+            }
+            
+            .btn {
+                display: none;
+            }
+            
+            audio, video {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enhanced HTML5 Content & Forms</h1>
+        <p>Demonstrating advanced HTML5 features including lists, tables, media, and forms</p>
+    </header>
+
+    <main>
+        <!-- Lists Section -->
+        <section id="lists-section">
+            <h2>Lists Demonstration</h2>
+            
+            <article>
+                <h3>Web Development Technologies</h3>
+                <p>Essential technologies for modern web development:</p>
+                <ul>
+                    <li><strong>Frontend Technologies</strong>
+                        <ul>
+                            <li>HTML5 - Structure and semantic markup</li>
+                            <li>CSS3 - Styling and responsive design</li>
+                            <li>JavaScript - Dynamic interactions</li>
+                            <li>React/Vue/Angular - Frontend frameworks</li>
+                        </ul>
+                    </li>
+                    <li><strong>Backend Technologies</strong>
+                        <ul>
+                            <li>Node.js - JavaScript runtime</li>
+                            <li>Python - Django/Flask frameworks</li>
+                            <li>PHP - Server-side scripting</li>
+                            <li>Java - Enterprise applications</li>
+                        </ul>
+                    </li>
+                    <li><strong>Database Technologies</strong>
+                        <ul>
+                            <li>MySQL - Relational database</li>
+                            <li>MongoDB - NoSQL database</li>
+                            <li>PostgreSQL - Advanced SQL features</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Learning Path for Web Development</h3>
+                <p>Recommended learning sequence for beginners:</p>
+                <ol>
+                    <li>HTML Fundamentals
+                        <ol type="a">
+                            <li>Basic tags and structure</li>
+                            <li>Semantic HTML5 elements</li>
+                            <li>Forms and validation</li>
+                        </ol>
+                    </li>
+                    <li>CSS Fundamentals
+                        <ol type="a">
+                            <li>Selectors and properties</li>
+                            <li>Layout techniques (Flexbox, Grid)</li>
+                            <li>Responsive design principles</li>
+                        </ol>
+                    </li>
+                    <li>JavaScript Fundamentals
+                        <ol type="a">
+                            <li>Variables and data types</li>
+                            <li>Functions and scope</li>
+                            <li>DOM manipulation</li>
+                        </ol>
+                    </li>
+                    <li>Advanced Topics
+                        <ol type="a">
+                            <li>Framework selection and learning</li>
+                            <li>Backend development</li>
+                            <li>Database integration</li>
+                        </ol>
+                    </li>
+                </ol>
+            </article>
+        </section>
+
+        <!-- Tables Section -->
+        <section id="tables-section">
+            <h2>Tables Demonstration</h2>
+            
+            <article>
+                <h3>Course Schedule</h3>
+                <p>Weekly schedule for web development bootcamp:</p>
+                <table>
+                    <caption>Weekly Course Schedule - Web Development Bootcamp</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Week</th>
+                            <th scope="col">Topic</th>
+                            <th scope="col">Technology Focus</th>
+                            <th scope="col">Project</th>
+                            <th scope="col">Assessment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>HTML Basics</td>
+                            <td>HTML5, Semantic Elements</td>
+                            <td>Personal Portfolio Page</td>
+                            <td>Quiz + Code Review</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>CSS Fundamentals</td>
+                            <td>CSS3, Flexbox</td>
+                            <td>Responsive Landing Page</td>
+                            <td>Design Assessment</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Advanced CSS</td>
+                            <td>Grid, Animations</td>
+                            <td>Interactive Gallery</td>
+                            <td>Peer Review</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>JavaScript Basics</td>
+                            <td>ES6+, DOM Manipulation</td>
+                            <td>Calculator App</td>
+                            <td>Practical Exam</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Forms & Validation</td>
+                            <td>HTML5 Forms, JavaScript</td>
+                            <td>Contact Form</td>
+                            <td>Code Challenge</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Total</th>
+                            <td colspan="3">5 Weeks of Intensive Learning</td>
+                            <td>Final Project</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+
+            <article>
+                <h3>Browser Compatibility Matrix</h3>
+                <p>HTML5 feature support across major browsers:</p>
+                <table>
+                    <caption>HTML5 Feature Support Matrix</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Feature</th>
+                            <th scope="col">Chrome</th>
+                            <th scope="col">Firefox</th>
+                            <th scope="col">Safari</th>
+                            <th scope="col">Edge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Semantic Elements</th>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Form Validation</th>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                            <td>⚠️ Partial Support</td>
+                            <td>✅ Full Support</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Audio/Video</th>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Canvas API</th>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                            <td>✅ Full Support</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <!-- Media Section -->
+        <section id="media-section">
+            <h2>Media Content Demonstration</h2>
+            
+            <article>
+                <h3>Images and Graphics</h3>
+                <p>Demonstrating responsive images with proper accessibility:</p>
+                
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Web Development Banner showing coding concepts with multiple monitors displaying code" 
+                         width="600" 
+                         height="300"
+                         loading="lazy">
+                    <figcaption>Modern web development involves multiple technologies working together</figcaption>
+                </figure>
+
+                <p>Here's a collection of technology logos represented as placeholder images:</p>
+                <div class="image-gallery">
+                    <figure>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+                             alt="HTML5 logo representing markup language" 
+                             width="150" 
+                             height="150"
+                             loading="lazy">
+                        <figcaption>HTML5</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+                             alt="CSS3 logo representing styling language" 
+                             width="150" 
+                             height="150"
+                             loading="lazy">
+                        <figcaption>CSS3</figcaption>
+                    </figure>
+                    
+                    <figure>
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+                             alt="JavaScript logo representing programming language" 
+                             width="150" 
+                             height="150"
+                             loading="lazy">
+                        <figcaption>JavaScript</figcaption>
+                    </figure>
+                </div>
+            </article>
+
+            <article>
+                <h3>Audio Content</h3>
+                <p>HTML5 audio element with multiple format support:</p>
+                
+                <figure>
+                    <audio controls preload="metadata" aria-label="Sample audio track for web development tutorial">
+                        <source src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" type="audio/mpeg">
+                        <source src="https://file-examples.com/storage/fe68c8a7c66efe9b8bb9b5b/2017/11/file_example_WAV_1MG.wav" type="audio/wav">
+                        <p>Your browser doesn't support HTML5 audio. You can <a href="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3">download the audio file</a> instead.</p>
+                    </audio>
+                    <figcaption>Sample audio: Tutorial introduction sound</figcaption>
+                </figure>
+
+                <details>
+                    <summary>Audio Technical Details</summary>
+                    <dl>
+                        <dt>Format Support:</dt>
+                        <dd>MP3, WAV, OGG</dd>
+                        <dt>Controls:</dt>
+                        <dd>Play, pause, volume, seek</dd>
+                        <dt>Accessibility:</dt>
+                        <dd>ARIA labels, keyboard navigation</dd>
+                    </dl>
+                </details>
+            </article>
+
+            <article>
+                <h3>Video Content</h3>
+                <p>HTML5 video element with responsive design and accessibility features:</p>
+                
+                <figure>
+                    <video controls 
+                           width="600" 
+                           height="340" 
+                           preload="metadata"
+                           poster="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                           aria-label="Web development tutorial video">
+                        <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                        <track kind="captions" 
+                               src="captions.vtt" 
+                               srclang="en" 
+                               label="English captions">
+                        <p>Your browser doesn't support HTML5 video. You can <a href="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4">download the video file</a> instead.</p>
+                    </video>
+                    <figcaption>Sample video: Introduction to HTML5 forms and validation</figcaption>
+                </figure>
+
+                <details>
+                    <summary>Video Features Demonstrated</summary>
+                    <ul>
+                        <li>Multiple format support (MP4, WebM)</li>
+                        <li>Responsive sizing with max-width</li>
+                        <li>Poster image for loading state</li>
+                        <li>Caption track support</li>
+                        <li>Fallback content for unsupported browsers</li>
+                        <li>Accessibility attributes</li>
+                    </ul>
+                </details>
+            </article>
+        </section>
+
+        <!-- Form Section -->
+        <section id="form-section">
+            <h2>Comprehensive HTML5 Form</h2>
+            
+            <form id="registration-form" method="post" action="#" novalidate>
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" 
+                               id="firstName" 
+                               name="firstName" 
+                               required 
+                               minlength="2" 
+                               maxlength="50"
+                               placeholder="Enter your first name"
+                               autocomplete="given-name"
+                               aria-describedby="firstName-help">
+                        <small id="firstName-help" class="help-text">Minimum 2 characters required</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" 
+                               id="lastName" 
+                               name="lastName" 
+                               required 
+                               minlength="2" 
+                               maxlength="50"
+                               placeholder="Enter your last name"
+                               autocomplete="family-name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               required 
+                               placeholder="example@domain.com"
+                               autocomplete="email"
+                               aria-describedby="email-help">
+                        <small id="email-help" class="help-text">We'll never share your email</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" 
+                               id="phone" 
+                               name="phone" 
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                               placeholder="123-456-7890"
+                               autocomplete="tel"
+                               aria-describedby="phone-help">
+                        <small id="phone-help" class="help-text">Format: 123-456-7890</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthDate">Date of Birth</label>
+                        <input type="date" 
+                               id="birthDate" 
+                               name="birthDate" 
+                               min="1920-01-01" 
+                               max="2010-12-31"
+                               autocomplete="bday">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Account Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input type="text" 
+                               id="username" 
+                               name="username" 
+                               required 
+                               minlength="3" 
+                               maxlength="20"
+                               pattern="[a-zA-Z0-9_]+"
+                               placeholder="Enter username"
+                               autocomplete="username"
+                               aria-describedby="username-help">
+                        <small id="username-help" class="help-text">3-20 characters, letters, numbers, and underscores only</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" 
+                               id="password" 
+                               name="password" 
+                               required 
+                               minlength="8"
+                               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
+                               placeholder="Enter secure password"
+                               autocomplete="new-password"
+                               aria-describedby="password-help">
+                        <small id="password-help" class="help-text">Minimum 8 characters with uppercase, lowercase, number, and special character</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" 
+                               id="confirmPassword" 
+                               name="confirmPassword" 
+                               required 
+                               placeholder="Confirm your password"
+                               autocomplete="new-password">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Course Preferences</legend>
+                    
+                    <div class="form-group">
+                        <label for="course">Select Course *</label>
+                        <select id="course" name="course" required aria-describedby="course-help">
+                            <option value="">Choose a course...</option>
+                            <optgroup label="Frontend Development">
+                                <option value="html-css">HTML & CSS Fundamentals</option>
+                                <option value="javascript">JavaScript Essentials</option>
+                                <option value="react">React Development</option>
+                                <option value="vue">Vue.js Framework</option>
+                            </optgroup>
+                            <optgroup label="Backend Development">
+                                <option value="node">Node.js Development</option>
+                                <option value="python">Python Web Development</option>
+                                <option value="php">PHP Programming</option>
+                            </optgroup>
+                            <optgroup label="Full Stack">
+                                <option value="fullstack">Complete Full Stack</option>
+                                <option value="mern">MERN Stack</option>
+                            </optgroup>
+                        </select>
+                        <small id="course-help" class="help-text">Select your primary area of interest</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Experience Level *</label>
+                        <select id="experience" name="experience" required>
+                            <option value="">Select your level...</option>
+                            <option value="beginner">Beginner (0-1 years)</option>
+                            <option value="intermediate">Intermediate (2-4 years)</option>
+                            <option value="advanced">Advanced (5+ years)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset class="checkbox-group">
+                            <legend>Learning Interests (Select all that apply)</legend>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="frontend" name="interests" value="frontend">
+                                <label for="frontend">Frontend Development</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="backend" name="interests" value="backend">
+                                <label for="backend">Backend Development</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mobile" name="interests" value="mobile">
+                                <label for="mobile">Mobile Development</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="devops" name="interests" value="devops">
+                                <label for="devops">DevOps & Deployment</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="database" name="interests" value="database">
+                                <label for="database">Database Management</label>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset class="radio-group">
+                            <legend>Preferred Learning Format *</legend>
+                            <div class="radio-item">
+                                <input type="radio" id="online" name="format" value="online" required>
+                                <label for="online">Online Self-Paced</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="live" name="format" value="live" required>
+                                <label for="live">Live Virtual Classes</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="hybrid" name="format" value="hybrid" required>
+                                <label for="hybrid">Hybrid (Online + In-Person)</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="in-person" name="format" value="in-person" required>
+                                <label for="in-person">In-Person Only</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="website">Personal Website/Portfolio</label>
+                        <input type="url" 
+                               id="website" 
+                               name="website" 
+                               placeholder="https://yoursite.com"
+                               autocomplete="url">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="github">GitHub Profile</label>
+                        <input type="url" 
+                               id="github" 
+                               name="github" 
+                               placeholder="https://github.com/username"
+                               pattern="https://github\.com/[a-zA-Z0-9_-]+"
+                               autocomplete="url">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="availability">Weekly Availability (Hours)</label>
+                        <input type="range" 
+                               id="availability" 
+                               name="availability" 
+                               min="1" 
+                               max="40" 
+                               value="10" 
+                               step="1"
+                               oninput="document.getElementById('availabilityDisplay').textContent = this.value">
+                        <output id="availabilityDisplay">10</output> hours per week
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Monthly Budget ($)</label>
+                        <input type="number" 
+                               id="budget" 
+                               name="budget" 
+                               min="50" 
+                               max="2000" 
+                               step="50"
+                               placeholder="e.g., 200">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goals">Learning Goals and Expectations</label>
+                        <textarea id="goals" 
+                                  name="goals" 
+                                  rows="4" 
+                                  maxlength="500"
+                                  placeholder="Describe your learning goals, what you hope to achieve, and any specific areas of focus..."
+                                  aria-describedby="goals-help"></textarea>
+                        <small id="goals-help" class="help-text">Maximum 500 characters</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resume">Upload Resume (PDF only)</label>
+                        <input type="file" 
+                               id="resume" 
+                               name="resume" 
+                               accept=".pdf"
+                               aria-describedby="resume-help">
+                        <small id="resume-help" class="help-text">Optional: PDF format, max 5MB</small>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences & Consent</legend>
+                    
+                    <div class="form-group">
+                        <label for="timezone">Timezone</label>
+                        <select id="timezone" name="timezone">
+                            <option value="">Select timezone...</option>
+                            <option value="UTC-12">UTC-12 (Baker Island)</option>
+                            <option value="UTC-11">UTC-11 (American Samoa)</option>
+                            <option value="UTC-10">UTC-10 (Hawaii)</option>
+                            <option value="UTC-9">UTC-9 (Alaska)</option>
+                            <option value="UTC-8">UTC-8 (Pacific Time)</option>
+                            <option value="UTC-7">UTC-7 (Mountain Time)</option>
+                            <option value="UTC-6">UTC-6 (Central Time)</option>
+                            <option value="UTC-5" selected>UTC-5 (Eastern Time)</option>
+                            <option value="UTC-4">UTC-4 (Atlantic Time)</option>
+                            <option value="UTC-3">UTC-3 (Brazil)</option>
+                            <option value="UTC-2">UTC-2 (Mid-Atlantic)</option>
+                            <option value="UTC-1">UTC-1 (Azores)</option>
+                            <option value="UTC+0">UTC+0 (London)</option>
+                            <option value="UTC+1">UTC+1 (Central Europe)</option>
+                            <option value="UTC+2">UTC+2 (Eastern Europe)</option>
+                            <option value="UTC+3">UTC+3 (Moscow)</option>
+                            <option value="UTC+4">UTC+4 (Dubai)</option>
+                            <option value="UTC+5">UTC+5 (Pakistan)</option>
+                            <option value="UTC+6">UTC+6 (Bangladesh)</option>
+                            <option value="UTC+7">UTC+7 (Thailand)</option>
+                            <option value="UTC+8">UTC+8 (China)</option>
+                            <option value="UTC+9">UTC+9 (Japan)</option>
+                            <option value="UTC+10">UTC+10 (Australia East)</option>
+                            <option value="UTC+11">UTC+11 (Solomon Islands)</option>
+                            <option value="UTC+12">UTC+12 (New Zealand)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox-item">
+                        <input type="checkbox" 
+                               id="newsletter" 
+                               name="newsletter" 
+                               value="yes">
+                        <label for="newsletter">Subscribe to our newsletter for updates and tips</label>
+                    </div>
+
+                    <div class="form-group checkbox-item">
+                        <input type="checkbox" 
+                               id="terms" 
+                               name="terms" 
+                               value="accepted" 
+                               required
+                               aria-describedby="terms-help">
+                        <label for="terms">I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a> *</label>
+                        <small id="terms-help" class="help-text">Required to proceed with registration</small>
+                    </div>
+
+                    <div class="form-group checkbox-item">
+                        <input type="checkbox" 
+                               id="age" 
+                               name="age" 
+                               value="confirmed" 
+                               required>
+                        <label for="age">I confirm that I am at least 18 years old *</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Register for Course</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    <input type="hidden" name="formVersion" value="1.0">
+                    <input type="hidden" name="timestamp" id="timestamp">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML5 Demo. Created for Web Development Assignment.</p>
+    </footer>
+
+    <script>
+        // Set timestamp when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('timestamp').value = new Date().toISOString();
+        });
+
+        // Custom validation for password confirmation
+        document.getElementById('confirmPassword').addEventListener('input', function() {
+            const password = document.getElementById('password').value;
+            const confirmPassword = this.value;
+            
+            if (password !== confirmPassword) {
+                this.setCustomValidity('Passwords do not match');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Update password validation message
+        document.getElementById('password').addEventListener('input', function() {
+            if (this.validity.patternMismatch) {
+                this.setCustomValidity('Password must contain at least 8 characters with uppercase, lowercase, number, and special character');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Enhanced form submission with HTML5 validation
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Check if form is valid using HTML5 validation
+            if (this.checkValidity()) {
+                alert('Form is valid! In a real application, this would submit to the server.');
+                console.log('Form data would be submitted:', new FormData(this));
+            } else {
+                // Focus on first invalid field
+                const firstInvalid = this.querySelector(':invalid');
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
