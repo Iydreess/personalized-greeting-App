@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics & Box Model Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Section -->
+    <nav class="navigation">
+        <h2 class="nav-title">CSS Fundamentals</h2>
+        <ul class="nav-menu">
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#content">Content</a></li>
+            <li><a href="#box-model">Box Model</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header-section">
+            <h1 class="main-heading">Welcome to CSS Basics</h1>
+            <p class="subtitle">Learning the fundamentals of styling and the Box Model</p>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="content-section">
+            <h2 class="section-heading">Introduction to CSS</h2>
+            <p class="intro-text">
+                CSS (Cascading Style Sheets) is the language used to style and layout web pages. 
+                It allows you to control the appearance of HTML elements, including colors, fonts, 
+                spacing, and positioning.
+            </p>
+            <p class="intro-text">
+                This page demonstrates various CSS properties and showcases the powerful concept 
+                of the CSS Box Model, which is fundamental to understanding how elements are 
+                rendered and spaced on a web page.
+            </p>
+        </section>
+
+        <!-- Content Section with Cards -->
+        <section id="content" class="content-section">
+            <h2 class="section-heading">CSS Properties in Action</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3 class="card-title">Typography</h3>
+                    <p class="card-text">
+                        CSS allows you to control font properties like size, family, weight, 
+                        and color to create beautiful typography.
+                    </p>
+                    <button class="card-button">Learn More</button>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Colors & Backgrounds</h3>
+                    <p class="card-text">
+                        Add visual appeal with background colors, gradients, and text colors 
+                        to make your content stand out.
+                    </p>
+                    <button class="card-button secondary">Explore</button>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Layout & Spacing</h3>
+                    <p class="card-text">
+                        Control the layout and spacing of elements using margin, padding, 
+                        and border properties from the Box Model.
+                    </p>
+                    <button class="card-button">Discover</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Box Model Demonstration -->
+        <section id="box-model" class="content-section">
+            <h2 class="section-heading">CSS Box Model Demonstration</h2>
+            <p class="box-model-intro">
+                Every HTML element is essentially a rectangular box. The CSS Box Model describes 
+                how these boxes are structured with content, padding, border, and margin.
+            </p>
+
+            <div class="box-model-examples">
+                <div class="box-example small-padding">
+                    <h4>Small Padding</h4>
+                    <p>This box has minimal padding around the content.</p>
+                </div>
+
+                <div class="box-example large-padding">
+                    <h4>Large Padding</h4>
+                    <p>This box has generous padding, creating more breathing room.</p>
+                </div>
+
+                <div class="box-example with-border">
+                    <h4>With Border</h4>
+                    <p>This box showcases different border styles and colors.</p>
+                </div>
+
+                <div class="box-example with-margin">
+                    <h4>With Margin</h4>
+                    <p>This box demonstrates margin spacing from other elements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Content Section -->
+        <section class="highlight-section">
+            <h2 class="highlight-heading">Key CSS Concepts</h2>
+            <div class="concept-list">
+                <div class="concept-item">
+                    <h3>Selectors</h3>
+                    <p>Target specific HTML elements to apply styles</p>
+                </div>
+                <div class="concept-item">
+                    <h3>Properties</h3>
+                    <p>Define what aspect of the element to style</p>
+                </div>
+                <div class="concept-item">
+                    <h3>Values</h3>
+                    <p>Specify how the property should be styled</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-heading">Get in Touch</h2>
+            <p class="contact-text">
+                Questions about CSS or web development? Feel free to reach out!
+            </p>
+            <div class="contact-buttons">
+                <button class="contact-btn primary">Send Message</button>
+                <button class="contact-btn outline">View Portfolio</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">© 2025 CSS Basics Assignment - Web Development Week 3</p>
+    </footer>
+</body>
+</html>
