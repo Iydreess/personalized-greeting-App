@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Responsive Layout - CSS Grid & Flexbox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Grid Container -->
+    <div class="page-container">
+        
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>ModernWeb</h1>
+                </div>
+                <div class="header-info">
+                    <p>Responsive Design with CSS Grid & Flexbox</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Section (Flexbox) -->
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Welcome to Modern Web Design</h2>
+                    <p>Experience the power of CSS Grid and Flexbox working together to create beautiful, responsive layouts that adapt to any screen size.</p>
+                    <button class="cta-button">Get Started</button>
+                </div>
+            </section>
+
+            <!-- Features Section (Flexbox Cards) -->
+            <section class="features">
+                <h2>Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Modern Design</h3>
+                        <p>Clean, contemporary layouts that follow current design trends and best practices.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Fully Responsive</h3>
+                        <p>Adapts seamlessly to desktop, tablet, and mobile devices for optimal user experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>High Performance</h3>
+                        <p>Optimized CSS and efficient layouts ensure fast loading times and smooth interactions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Easy to Customize</h3>
+                        <p>Well-structured code makes it simple to modify and extend the design.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Section -->
+            <section class="content-section">
+                <h2>About This Layout</h2>
+                <div class="content-text">
+                    <p>This webpage demonstrates the powerful combination of CSS Grid and Flexbox for creating modern, responsive layouts. The main page structure uses CSS Grid to position major sections, while Flexbox handles navigation alignment, card layouts, and content distribution within those sections.</p>
+                    
+                    <p>The design adapts fluidly across different screen sizes using media queries and responsive units like percentages, rem, and viewport units. This ensures an optimal viewing experience whether you're on a smartphone, tablet, or desktop computer.</p>
+                    
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li><strong>CSS Grid:</strong> For main layout structure and complex 2D positioning</li>
+                        <li><strong>Flexbox:</strong> For navigation, cards, and 1D content alignment</li>
+                        <li><strong>Media Queries:</strong> For responsive breakpoints</li>
+                        <li><strong>Relative Units:</strong> rem, %, vw, vh for scalable design</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h3>Quick Links</h3>
+                <ul class="sidebar-links">
+                    <li><a href="#documentation">Documentation</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#examples">Examples</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+
+                <div class="sidebar-widget">
+                    <h4>Latest Updates</h4>
+                    <div class="update-item">
+                        <span class="update-date">Sept 20</span>
+                        <p>Enhanced mobile responsiveness</p>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">Sept 18</span>
+                        <p>Added CSS Grid layout</p>
+                    </div>
+                    <div class="update-item">
+                        <span class="update-date">Sept 15</span>
+                        <p>Improved Flexbox navigation</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <p>A demonstration of modern CSS layout techniques for responsive web design.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Technologies</h4>
+                    <ul>
+                        <li>CSS Grid</li>
+                        <li>Flexbox</li>
+                        <li>Media Queries</li>
+                        <li>HTML5</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@modernweb.com<br>
+                       Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ModernWeb. Responsive Design Assignment.</p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
