@@ -1,0 +1,722 @@
+/* ========================================
+   GENERAL STYLES & RESET
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   PART 1: CSS3 TRANSITIONS AND ANIMATIONS
+   ======================================== */
+
+/* Header Animations */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+/* Fade-in animation for header */
+.fade-in {
+    animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in animation for subtitle */
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.slide-in {
+    animation: slideIn 1s ease-out 0.5s backwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 50px;
+    padding: 20px;
+    border-left: 4px solid #667eea;
+}
+
+.section h2 {
+    color: #667eea;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.demo-area {
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.demo-area h3 {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+/* Button Hover Effects - Transition Examples */
+.btn {
+    padding: 12px 30px;
+    margin: 8px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Glow Effect Button */
+.btn-glow {
+    background: #667eea;
+    color: white;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 30px rgba(102, 126, 234, 0.8),
+                0 0 60px rgba(102, 126, 234, 0.5);
+    transform: translateY(-3px);
+}
+
+/* Bounce Effect Button */
+.btn-bounce {
+    background: #f093fb;
+    color: white;
+}
+
+.btn-bounce:hover {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-5px); }
+}
+
+/* Slide Effect Button */
+.btn-slide {
+    background: #4facfe;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #00f2fe;
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn-slide:hover::before {
+    left: 0;
+}
+
+/* Rotate Effect Button */
+.btn-rotate {
+    background: #fa709a;
+    color: white;
+}
+
+.btn-rotate:hover {
+    transform: rotate(360deg);
+    background: #fee140;
+}
+
+/* Continuous Keyframe Animations */
+.animation-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Floating Animation */
+.floating {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Pulsing Animation */
+.pulsing {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Rotating Animation */
+.rotating {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Color Shift Animation */
+.color-shift {
+    animation: colorShift 5s ease-in-out infinite;
+}
+
+@keyframes colorShift {
+    0% { background: #fa709a; }
+    25% { background: #fee140; }
+    50% { background: #30cfd0; }
+    75% { background: #a8edea; }
+    100% { background: #fa709a; }
+}
+
+/* Card Hover Transitions */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: rotate(360deg);
+}
+
+.card h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   PART 2: JAVASCRIPT FUNCTION STYLES
+   ======================================== */
+
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.calculator input,
+.calculator select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.calculator input:focus,
+.calculator select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 15px;
+    background: #e8eaf6;
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+.code-display {
+    margin-top: 15px;
+    padding: 15px;
+    background: #263238;
+    color: #aed581;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+}
+
+.code-display p {
+    margin: 8px 0;
+}
+
+.code-display span {
+    color: #ffeb3b;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5568d3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-info {
+    background: #4facfe;
+    color: white;
+}
+
+.btn-info:hover {
+    background: #00f2fe;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #43e97b;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #38f9d7;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: #fa709a;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #fee140;
+    color: #333;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #f5576c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #f093fb;
+    transform: translateY(-2px);
+}
+
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ========================================
+   PART 3: JAVASCRIPT-TRIGGERED CSS ANIMATIONS
+   ======================================== */
+
+/* Animation Box */
+.animation-box {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 15px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Bounce-in Animation */
+.bounce-in {
+    animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Spin Animation */
+.spin {
+    animation: spin 1s ease-in-out;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(720deg); }
+}
+
+/* Shake Animation */
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+/* Flip Animation */
+.flip {
+    animation: flip 0.8s ease-in-out;
+}
+
+@keyframes flip {
+    0% { transform: perspective(400px) rotateY(0); }
+    100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+/* Flip Card */
+.flip-card-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.flip-card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.flip-card-front {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-front h4,
+.flip-card-back h4 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* Loader */
+.loader-container {
+    display: none;
+    text-align: center;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.loader-container.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #667eea;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    animation: spin 1s linear infinite;
+}
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal {
+    background: white;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    animation: slideInDown 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-footer {
+    padding: 20px;
+    text-align: right;
+    border-top: 1px solid #eee;
+}
+
+/* Score Board */
+.score-board {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 15px;
+}
+
+.score-board h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.score-board #scoreDisplay {
+    color: #fee140;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.score-subtitle {
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .calculator {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .calculator input,
+    .calculator select {
+        width: 100%;
+    }
+    
+    .animation-box {
+        width: 150px;
+        height: 150px;
+    }
+}

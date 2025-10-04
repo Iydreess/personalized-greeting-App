@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Experience - CSS & JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 class="fade-in">🎨 Interactive Web Experience</h1>
+        <p class="subtitle slide-in">Combining CSS3 Animations with JavaScript Functions</p>
+    </header>
+
+    <main class="container">
+        <!-- ========================================
+             PART 1: CSS3 Transitions and Animations
+             ======================================== -->
+        <section class="section">
+            <h2>Part 1: Pure CSS Animations</h2>
+            
+            <!-- Button Hover Effects -->
+            <div class="demo-area">
+                <h3>Button Hover Effects</h3>
+                <button class="btn btn-glow">Glow Effect</button>
+                <button class="btn btn-bounce">Bounce Effect</button>
+                <button class="btn btn-slide">Slide Effect</button>
+                <button class="btn btn-rotate">Rotate Effect</button>
+            </div>
+
+            <!-- Continuous Animations -->
+            <div class="demo-area">
+                <h3>Continuous Keyframe Animations</h3>
+                <div class="animation-showcase">
+                    <div class="box floating">Floating</div>
+                    <div class="box pulsing">Pulsing</div>
+                    <div class="box rotating">Rotating</div>
+                    <div class="box color-shift">Color Shift</div>
+                </div>
+            </div>
+
+            <!-- Smooth Transitions -->
+            <div class="demo-area">
+                <h3>Smooth Transitions on Hover</h3>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="card-icon">🎨</div>
+                        <h4>Design</h4>
+                        <p>Beautiful visual effects</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚡</div>
+                        <h4>Performance</h4>
+                        <p>Fast and responsive</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h4>Innovation</h4>
+                        <p>Modern web techniques</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PART 2: JavaScript Functions - Scope, Parameters & Return Values
+             ======================================== -->
+        <section class="section">
+            <h2>Part 2: JavaScript Functions Demonstration</h2>
+            
+            <div class="demo-area">
+                <h3>Function with Parameters & Return Values</h3>
+                <div class="calculator">
+                    <input type="number" id="num1" placeholder="Number 1" value="10">
+                    <select id="operation">
+                        <option value="add">Add</option>
+                        <option value="subtract">Subtract</option>
+                        <option value="multiply">Multiply</option>
+                        <option value="divide">Divide</option>
+                    </select>
+                    <input type="number" id="num2" placeholder="Number 2" value="5">
+                    <button class="btn btn-primary" onclick="performCalculation()">Calculate</button>
+                    <div class="result" id="calcResult">Result will appear here</div>
+                </div>
+            </div>
+
+            <div class="demo-area">
+                <h3>Scope Demonstration (Local vs Global)</h3>
+                <button class="btn btn-info" onclick="demonstrateScope()">Show Scope Example</button>
+                <div class="result" id="scopeResult"></div>
+                <div class="code-display">
+                    <p><strong>Global Variable:</strong> <span id="globalVar">Not set</span></p>
+                    <p><strong>Function Counter:</strong> <span id="counterValue">0</span></p>
+                </div>
+            </div>
+
+            <div class="demo-area">
+                <h3>Reusable Functions</h3>
+                <input type="text" id="userInput" placeholder="Enter text to transform">
+                <div class="button-group">
+                    <button class="btn btn-sm" onclick="transformText('uppercase')">Uppercase</button>
+                    <button class="btn btn-sm" onclick="transformText('lowercase')">Lowercase</button>
+                    <button class="btn btn-sm" onclick="transformText('reverse')">Reverse</button>
+                    <button class="btn btn-sm" onclick="transformText('wordcount')">Word Count</button>
+                </div>
+                <div class="result" id="textResult"></div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PART 3: Combining CSS Animations with JavaScript
+             ======================================== -->
+        <section class="section">
+            <h2>Part 3: JavaScript-Triggered CSS Animations</h2>
+            
+            <!-- Animated Box Control -->
+            <div class="demo-area">
+                <h3>Dynamic Animation Control</h3>
+                <div class="animation-box" id="animBox">
+                    <p>Click buttons to animate me!</p>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-success" onclick="triggerAnimation('bounce-in')">Bounce In</button>
+                    <button class="btn btn-success" onclick="triggerAnimation('spin')">Spin</button>
+                    <button class="btn btn-success" onclick="triggerAnimation('shake')">Shake</button>
+                    <button class="btn btn-success" onclick="triggerAnimation('flip')">Flip</button>
+                    <button class="btn btn-warning" onclick="resetAnimation()">Reset</button>
+                </div>
+            </div>
+
+            <!-- Card Flip Animation -->
+            <div class="demo-area">
+                <h3>Interactive Card Flip</h3>
+                <div class="flip-card-container">
+                    <div class="flip-card" id="flipCard" onclick="toggleCardFlip()">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h4>🎭</h4>
+                                <p>Click to Flip!</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <h4>✨</h4>
+                                <p>CSS + JavaScript Magic!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Animation Control -->
+            <div class="demo-area">
+                <h3>Toggle Loading Animation</h3>
+                <button class="btn btn-primary" onclick="toggleLoader()">Start/Stop Loader</button>
+                <div class="loader-container" id="loaderContainer">
+                    <div class="loader"></div>
+                    <p>Processing...</p>
+                </div>
+            </div>
+
+            <!-- Modal Popup with Animation -->
+            <div class="demo-area">
+                <h3>Animated Modal Popup</h3>
+                <button class="btn btn-primary" onclick="openModal()">Open Modal</button>
+            </div>
+        </section>
+
+        <!-- Score Tracker (Bonus Feature) -->
+        <section class="section">
+            <h2>Bonus: Interaction Score Tracker</h2>
+            <div class="score-board">
+                <h3>Your Interaction Score: <span id="scoreDisplay">0</span></h3>
+                <p class="score-subtitle">Every button click increases your score!</p>
+                <button class="btn btn-danger" onclick="resetScore()">Reset Score</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3>🎉 Animated Modal</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This modal slides in and fades in using CSS animations triggered by JavaScript!</p>
+                <p>Notice how the overlay also fades in smoothly.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal()">Close Modal</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Iddris creations</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
