@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals Mastery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 JavaScript Fundamentals Mastery</h1>
+            <p>Interactive demonstration of JavaScript basics, functions, loops, and DOM manipulation</p>
+        </header>
+
+        <!-- Part 1: JavaScript Basics -->
+        <section class="section" id="part1">
+            <h2>🎯 Part 1: JavaScript Basics</h2>
+            <p>Variables, Data Types, Operators, and Conditionals</p>
+            
+            <div class="demo-box">
+                <h3>Age Checker & Greeting Generator</h3>
+                <input type="text" id="userName" placeholder="Enter your name">
+                <input type="number" id="userAge" placeholder="Enter your age">
+                <button id="checkUserBtn">Check & Greet</button>
+                <div id="userResult" class="result"></div>
+            </div>
+
+            <div class="demo-box">
+                <h3>Simple Calculator</h3>
+                <input type="number" id="num1" placeholder="First number">
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">×</option>
+                    <option value="/">÷</option>
+                </select>
+                <input type="number" id="num2" placeholder="Second number">
+                <button id="calculateBtn">Calculate</button>
+                <div id="calcResult" class="result"></div>
+            </div>
+        </section>
+
+        <!-- Part 2: Functions -->
+        <section class="section" id="part2">
+            <h2>❤️ Part 2: JavaScript Functions</h2>
+            <p>Reusable code blocks for cleaner, DRY programming</p>
+            
+            <div class="demo-box">
+                <h3>String Formatter</h3>
+                <input type="text" id="textInput" placeholder="Enter text to format">
+                <button id="uppercaseBtn">UPPERCASE</button>
+                <button id="lowercaseBtn">lowercase</button>
+                <button id="titleCaseBtn">Title Case</button>
+                <div id="formattedText" class="result"></div>
+            </div>
+
+            <div class="demo-box">
+                <h3>Shopping Cart Total Calculator</h3>
+                <input type="number" id="itemPrice" placeholder="Item price" step="0.01">
+                <input type="number" id="itemQuantity" placeholder="Quantity" value="1">
+                <button id="addItemBtn">Add Item</button>
+                <button id="clearCartBtn">Clear Cart</button>
+                <div id="cartItems" class="result"></div>
+                <div id="cartTotal" class="result total"></div>
+            </div>
+        </section>
+
+        <!-- Part 3: Loops -->
+        <section class="section" id="part3">
+            <h2>🔁 Part 3: JavaScript Loops</h2>
+            <p>Mastering repetition and iteration</p>
+            
+            <div class="demo-box">
+                <h3>Multiplication Table Generator</h3>
+                <input type="number" id="tableNumber" placeholder="Enter number (1-20)" min="1" max="20" value="5">
+                <button id="generateTableBtn">Generate Table</button>
+                <div id="multiplicationTable" class="result scroll-box"></div>
+            </div>
+
+            <div class="demo-box">
+                <h3>Array Iterator & List Builder</h3>
+                <input type="text" id="arrayItem" placeholder="Enter item">
+                <button id="addArrayItemBtn">Add to List</button>
+                <button id="displayListBtn">Display List</button>
+                <button id="clearListBtn">Clear</button>
+                <div id="arrayDisplay" class="result"></div>
+                <div id="iteratedList" class="result"></div>
+            </div>
+        </section>
+
+        <!-- Part 4: DOM Manipulation -->
+        <section class="section" id="part4">
+            <h2>🌐 Part 4: DOM Manipulation</h2>
+            <p>Making pages interactive with JavaScript</p>
+            
+            <div class="demo-box">
+                <h3>Dynamic Content Toggler</h3>
+                <button id="toggleContentBtn">Toggle Secret Message</button>
+                <button id="changeColorBtn">Change Theme Color</button>
+                <div id="secretMessage" class="hidden">
+                    🎉 Congratulations! You've mastered DOM manipulation!
+                </div>
+            </div>
+
+            <div class="demo-box">
+                <h3>Element Creator</h3>
+                <input type="text" id="newElementText" placeholder="Enter text for new element">
+                <button id="createElementBtn">Create Element</button>
+                <button id="removeLastBtn">Remove Last</button>
+                <div id="dynamicContainer" class="result"></div>
+            </div>
+
+            <div class="demo-box">
+                <h3>Click Counter</h3>
+                <button id="clickMeBtn" class="big-btn">Click Me!</button>
+                <div id="clickCount" class="result">Clicks: 0</div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Created with ❤️ for JavaScript Fundamentals Assignment | © 2025</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

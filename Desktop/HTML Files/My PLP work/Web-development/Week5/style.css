@@ -1,0 +1,278 @@
+/* =========================
+   Global Styles & Reset
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5af19 0%, #f12711 100%);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* =========================
+   Header Styles
+   ========================= */
+header {
+    background: linear-gradient(135deg, #f5af19 0%, #d4af37 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* =========================
+   Section Styles
+   ========================= */
+.section {
+    padding: 40px 30px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+.section h2 {
+    color: #d4af37;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.section > p {
+    color: #666;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+/* =========================
+   Demo Box Styles
+   ========================= */
+.demo-box {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 4px solid #d4af37;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.demo-box h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+/* =========================
+   Input Styles
+   ========================= */
+input[type="text"],
+input[type="number"],
+select {
+    padding: 12px 15px;
+    margin: 5px 5px 5px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    min-width: 150px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+/* =========================
+   Button Styles
+   ========================= */
+button {
+    padding: 12px 25px;
+    margin: 5px;
+    background: linear-gradient(135deg, #f5af19 0%, #d4af37 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 600;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.big-btn {
+    font-size: 1.5em;
+    padding: 20px 40px;
+    margin: 10px;
+}
+
+/* =========================
+   Result Display Styles
+   ========================= */
+.result {
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    min-height: 20px;
+    font-size: 1.1em;
+}
+
+.result:empty {
+    display: none;
+}
+
+.result.total {
+    background: #fff8dc;
+    border-color: #d4af37;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.scroll-box {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* =========================
+   Special Elements
+   ========================= */
+.hidden {
+    display: none;
+}
+
+#secretMessage {
+    background: linear-gradient(135deg, #f5af19 0%, #d4af37 100%);
+    color: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#dynamicContainer .dynamic-element {
+    background: #fffacd;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 6px;
+    border-left: 3px solid #d4af37;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   Footer Styles
+   ========================= */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .section {
+        padding: 25px 15px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* =========================
+   Theme Color Classes
+   ========================= */
+.theme-blue {
+    background: linear-gradient(135deg, #f5af19 0%, #d4af37 100%);
+}
+
+.theme-green {
+    background: linear-gradient(135deg, #daa520 0%, #b8860b 100%);
+}
+
+.theme-orange {
+    background: linear-gradient(135deg, #ffd700 0%, #ffb300 100%);
+}
+
+.theme-pink {
+    background: linear-gradient(135deg, #f5af19 0%, #d4af37 100%);
+}
